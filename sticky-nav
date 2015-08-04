@@ -1,3 +1,4 @@
+css
 .sticky {
     position: fixed;
     width: 100%;
@@ -6,3 +7,25 @@
     z-index: 100;
     border-top: 0;
 }
+
+js
+
+$(document).ready(function() {
+var stickyNavTop = $('.navbar').offset().top;
+ 
+var stickyNav = function(){
+var scrollTop = $(window).scrollTop();
+      
+if (scrollTop > stickyNavTop) { 
+    $('.navbar').addClass('sticky');
+} else {
+    $('.navbar').removeClass('sticky'); 
+}
+};
+ 
+stickyNav();
+ 
+$(window).scroll(function() {
+    stickyNav();
+});
+});
